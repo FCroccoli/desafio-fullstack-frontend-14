@@ -11,12 +11,15 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
+  border-bottom: 1px solid var(--grey-4);
+  box-shadow: 0px 0px 5px var(--grey-4);
   display: flex;
   flex-direction: row;
-  justify-content: ${(props: iHeaderProps) =>
-    props.solo ? "center" : "space-between"};
+  justify-content: ${(props: iHeaderProps) => {
+    return props.solo ? "center" : "space-between";
+  }};
   align-items: center;
-  background-color: var(--grey-0);
+  background-color: var(--grey-1);
   z-index: 2;
   @media (min-width: 996px) {
     padding: 20px 20%;

@@ -4,14 +4,14 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 export const LoginWrapper = styled.div`
   width: 90%;
   background: var(--grey-1);
-  padding: 32px 18px;
+  padding: 32px 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 26px;
-  border-radius: 8px;
+  gap: 28px;
+  border-radius: 4px;
   @media (min-width: 996px) {
     width: 26%;
   }
@@ -21,7 +21,7 @@ export const LoginForm = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 `;
 
 export const VisibleIcon = styled(FaEye)`

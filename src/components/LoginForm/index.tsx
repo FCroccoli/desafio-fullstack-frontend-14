@@ -1,18 +1,23 @@
-import React, { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Api } from "../../scripts/requests";
+import { Api } from "../../services/api";
 import { LoginWrapper, LoginForm, VisibleIcon, InvisibleIcon } from "./style";
-import { ErrorMessage, HeadlineBold, Label, Title1 } from "../../styles/text";
-import { Input, PasswordInput, LabelWrapper } from "../../styles/input";
-import { PrimaryButton } from "../../styles/button";
+import {
+  ErrorMessage,
+  HeadlineBold,
+  Label,
+  Title1,
+} from "../../styles/textStyle";
+import { Input, PasswordInput, LabelWrapper } from "../../styles/inputStyle";
+import { PrimaryButton } from "../../styles/buttonStyle";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
-import { iLoginUser } from "../../interfaces";
+import { iLoginUser } from "../../interfaces/user";
 
 export default function Login() {
   const loginSchema = yup.object().shape({
