@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 export const LoginWrapper = styled.div`
   width: 90%;
   background: var(--grey-1);
-  padding: 32px 20px;
+  padding: 12px 20px 32px 20px;
   margin: auto;
   display: flex;
   flex-direction: column;

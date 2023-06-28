@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
         --success:#3FE864;
         --negative:#E83F5B;
         --white: #FFFFFF;
-        --modal-grey: rgba(18, 18, 20, 0.5);
+        --modal-grey: rgba(20, 20, 20, 0.5);
     }
     *{
         margin: 0;

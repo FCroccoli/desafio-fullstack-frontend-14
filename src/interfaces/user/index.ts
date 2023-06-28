@@ -1,5 +1,5 @@
 export interface iUserRegister {
-  name: string;
+  first_name: string;
   last_name: string;
   email: string;
   password: string;
@@ -11,7 +11,7 @@ export interface iUser {
   created_at?: string;
   email: string;
   id: string;
-  name: string;
+  first_name: string;
   last_name: string;
   telephone: string;
 }
@@ -19,7 +19,7 @@ export interface iUser {
 export interface iUserRes {
   data: {
     id: string;
-    name: string;
+    first_name: string;
     last_name: string;
     email: string;
     telephone: string;
