@@ -35,7 +35,7 @@ export default function Register() {
       .string()
       .required("Campo obrigatório")
       .oneOf([yup.ref("password"), ""], "Senhas precisam ser iguais"),
-    telephone: yup.string().required("Campo obrigatório"),
+    phone: yup.string().required("Campo obrigatório"),
   });
 
   const {
@@ -60,12 +60,16 @@ export default function Register() {
   });
 
   async function registerSubmit(data: iUserRegister) {
-    const newUser = await Api.register(data);
-    if (newUser) {
-      notifySuccess();
-      clearRegister();
-      navigate("");
-    } else {
+    try {
+      const newUser = await Api.register(data);
+      if (newUser) {
+        notifySuccess();
+        clearRegister();
+        navigate("");
+      } else {
+        notifyError();
+      }
+    } catch (error) {
       notifyError();
     }
   }
@@ -148,13 +152,13 @@ export default function Register() {
         </LabelWrapper>
         <LabelWrapper>
           <Label htmlFor="telephone">Telefone</Label>
-          <ErrorMessage>{errors.telephone?.message}</ErrorMessage>
+          <ErrorMessage>{errors.phone?.message}</ErrorMessage>
           <Input
             type="text"
-            id="telephone"
-            {...register("telephone")}
+            id="phone"
+            {...register("phone")}
             placeholder="Digite seu telefone"
-            value={userRegister.telephone}
+            value={userRegister.phone}
             onChange={(event) => setRegisterTelephone(event.target.value)}
           />
         </LabelWrapper>

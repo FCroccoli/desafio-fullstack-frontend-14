@@ -4,7 +4,7 @@ export interface iUserRegister {
   email: string;
   password: string;
   passwordCheck: string;
-  telephone: string;
+  phone: string;
 }
 
 export interface iUser {
@@ -13,7 +13,7 @@ export interface iUser {
   id: string;
   first_name: string;
   last_name: string;
-  telephone: string;
+  phone: string;
 }
 
 export interface iUserRes {
@@ -22,7 +22,7 @@ export interface iUserRes {
     first_name: string;
     last_name: string;
     email: string;
-    telephone: string;
+    phone: string;
     created_at: string;
   };
 }

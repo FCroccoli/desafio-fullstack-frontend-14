@@ -38,13 +38,18 @@ export default function Login() {
   });
 
   async function loginSubmit(data: iLoginUser) {
-    const loginRes = await Api.login(data);
-    if (loginRes) {
-      localStorage.setItem("@token", loginRes.data.token);
-      Api.headers.Authorization = `Bearer ${loginRes.data.token}`;
-      login();
-      navigate(`home`);
-    } else {
+    try {
+      const loginRes = await Api.login(data);
+      console.log(loginRes);
+      if (loginRes) {
+        localStorage.setItem("@token", loginRes.data.token);
+        Api.headers.Authorization = `Bearer ${loginRes.data.token}`;
+        login();
+        navigate(`home`);
+      } else {
+        notifyError();
+      }
+    } catch (error) {
       notifyError();
     }
   }

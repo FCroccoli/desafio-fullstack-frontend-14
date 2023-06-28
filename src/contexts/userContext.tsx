@@ -101,7 +101,7 @@ export default function UserProvider({ children }: iUserContextProps) {
   }
 
   function setRegisterTelephone(newTelephone: string) {
-    setUserRegister({ ...userRegister, telephone: newTelephone });
+    setUserRegister({ ...userRegister, phone: newTelephone });
   }
 
   function setRegisterEmail(newEmail: string) {

@@ -83,7 +83,7 @@ export default function ModalProvider({ children }: iModalContextProps) {
   }
 
   function setContactTelephone(newTelephone: string) {
-    setSelectedContact({ ...selectedContact, telephone: newTelephone });
+    setSelectedContact({ ...selectedContact, phone: newTelephone });
   }
 
   function setContactEmail(newEmail: string) {
@@ -95,7 +95,7 @@ export default function ModalProvider({ children }: iModalContextProps) {
   }
 
   function setInfoName(newName: string) {
-    setUserInfo({ ...userInfo, name: newName });
+    setUserInfo({ ...userInfo, first_name: newName });
   }
 
   function setInfoLastName(newLastName: string) {
@@ -103,7 +103,7 @@ export default function ModalProvider({ children }: iModalContextProps) {
   }
 
   function setInfoTelephone(newTelephone: string) {
-    setUserInfo({ ...userInfo, telephone: newTelephone });
+    setUserInfo({ ...userInfo, phone: newTelephone });
   }
 
   function setInfoEmail(newEmail: string) {

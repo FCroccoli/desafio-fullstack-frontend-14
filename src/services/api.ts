@@ -6,7 +6,11 @@ import {
   iUserRegister,
   iUserRes,
 } from "../interfaces/user";
-import { iContact, iContactArrayRes } from "../interfaces/contact";
+import {
+  iContact,
+  iContactArrayRes,
+  iContactRegister,
+} from "../interfaces/contact";
 
 export class Api {
   static baseUrl = "http://localhost:3000";
@@ -77,7 +81,9 @@ export class Api {
     return contacts;
   }
 
-  static async postNewContact(contactData: iContact): Promise<iContact> {
+  static async postNewContact(
+    contactData: iContactRegister
+  ): Promise<iContact> {
     const { data } = await axios
       .post<iContact>(`${this.baseUrl}/contact`, contactData, {
         headers: this.headers,
@@ -89,7 +95,7 @@ export class Api {
   }
 
   static async editContact(
-    contactData: iContact,
+    contactData: iContactRegister,
     id: string
   ): Promise<iContact> {
     const { data } = await axios
