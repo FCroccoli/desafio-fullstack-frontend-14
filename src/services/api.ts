@@ -5,6 +5,7 @@ import {
   iUser,
   iUserRegister,
   iUserRes,
+  iUserUpdate,
 } from "../interfaces/user";
 import {
   iContact,
@@ -48,7 +49,7 @@ export class Api {
     return user;
   }
 
-  static async editUser(userData: iUser): Promise<iUserRes> {
+  static async editUser(userData: iUserUpdate): Promise<iUserRes> {
     const user = await axios
       .patch<iUserRes>(`${this.baseUrl}/user`, userData, {
         headers: this.headers,

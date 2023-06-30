@@ -16,6 +16,13 @@ export interface iUser {
   phone: string;
 }
 
+export interface iUserUpdate {
+  email: string;
+  first_name: string;
+  last_name: string;
+  phone: string;
+}
+
 export interface iUserRes {
   data: {
     id: string;

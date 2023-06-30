@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Api } from "../services/api";
-import { iUserRegister, iUser } from "../interfaces/user";
+import { iUserRegister, iUserUpdate } from "../interfaces/user";
 import { iContact } from "../interfaces/contact";
 
 export interface iUserContextProps {
@@ -11,7 +11,7 @@ export interface iUserContext {
   isLoggedIn: boolean;
   logout: () => void;
   login: () => void;
-  user: iUser;
+  user: iUserUpdate;
   contacts: iContact[];
   isLoading: boolean;
   addContact: (contact: iContact) => void;
@@ -25,7 +25,7 @@ export interface iUserContext {
   setRegisterTelephone: (newTelephone: string) => void;
   setRegisterEmail: (newEmail: string) => void;
   clearRegister: () => void;
-  setNewUser: (newUser: iUser) => void;
+  setNewUser: (newUser: iUserUpdate) => void;
 }
 
 export const UserContext = createContext({} as iUserContext);
@@ -37,7 +37,7 @@ export default function UserProvider({ children }: iUserContextProps) {
 
   const [userRegister, setUserRegister] = useState({} as iUserRegister);
 
-  const [user, setUser] = useState({} as iUser);
+  const [user, setUser] = useState({} as iUserUpdate);
 
   const [contacts, setContacts] = useState([] as iContact[]);
 
@@ -84,12 +84,12 @@ export default function UserProvider({ children }: iUserContextProps) {
     }
   }
 
-  function setNewUser(newUser: iUser) {
+  function setNewUser(newUser: iUserUpdate) {
     setUser(newUser);
   }
 
   function setRegisterName(newName: string) {
-    setUserRegister({ ...userRegister, name: newName });
+    setUserRegister({ ...userRegister, first_name: newName });
   }
 
   function setRegisterLastName(newLastName: string) {

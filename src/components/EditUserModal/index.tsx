@@ -12,7 +12,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ModalContext } from "../../contexts/modalContext";
 import { UserContext } from "../../contexts/userContext";
-import { iUser } from "../../interfaces/user";
+import { iUserUpdate } from "../../interfaces/user";
 import { useNavigate } from "react-router-dom";
 
 export default function EditUserModal() {
@@ -44,11 +44,11 @@ export default function EditUserModal() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<iUser>({
+  } = useForm<iUserUpdate>({
     resolver: yupResolver(editUserSchema),
   });
 
-  async function submitUser(data: iUser) {
+  async function submitUser(data: iUserUpdate) {
     toggleLoadingModal();
     await Api.editUser(data)
       .then(() => {
