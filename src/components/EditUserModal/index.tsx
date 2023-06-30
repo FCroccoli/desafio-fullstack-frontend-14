@@ -129,7 +129,7 @@ export default function EditUserModal() {
               id="first_name"
               {...register("first_name")}
               placeholder="Digite o nome"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setInfoName(event.target.value);
               }}
               value={userInfo.first_name}
@@ -143,7 +143,7 @@ export default function EditUserModal() {
               id="last_name"
               {...register("last_name")}
               placeholder="Digite o sobrenome"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setInfoLastName(event.target.value);
               }}
               value={userInfo.last_name}
@@ -157,7 +157,7 @@ export default function EditUserModal() {
               id="email"
               {...register("email")}
               placeholder="Digite o email"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setInfoEmail(event.target.value);
               }}
               value={userInfo.email}
@@ -171,7 +171,7 @@ export default function EditUserModal() {
               id="phone"
               {...register("phone")}
               placeholder="Digite o telefone"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setInfoTelephone(event.target.value);
               }}
               value={userInfo.phone}
@@ -179,7 +179,7 @@ export default function EditUserModal() {
           </LabelWrapper>
           <PrimaryButton>Editar Usuario</PrimaryButton>
           <PrimaryButton
-            onClick={(event) => {
+            onClick={(event: any) => {
               event.preventDefault();
               deleteUser();
             }}

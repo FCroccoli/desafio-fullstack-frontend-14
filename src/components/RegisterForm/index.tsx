@@ -123,7 +123,9 @@ export default function Register() {
             {...register("first_name")}
             placeholder="Digite seu nome"
             value={userRegister.first_name}
-            onChange={(event) => setRegisterName(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterName(event.target.value)
+            }
           />
         </LabelWrapper>
         <LabelWrapper>
@@ -135,7 +137,9 @@ export default function Register() {
             {...register("last_name")}
             placeholder="Digite seu sobrenome"
             value={userRegister.last_name}
-            onChange={(event) => setRegisterLastName(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterLastName(event.target.value)
+            }
           />
         </LabelWrapper>
         <LabelWrapper>
@@ -147,7 +151,9 @@ export default function Register() {
             {...register("email")}
             placeholder="Digite seu email"
             value={userRegister.email}
-            onChange={(event) => setRegisterEmail(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterEmail(event.target.value)
+            }
           />
         </LabelWrapper>
         <LabelWrapper>
@@ -159,7 +165,9 @@ export default function Register() {
             {...register("phone")}
             placeholder="Digite seu telefone"
             value={userRegister.phone}
-            onChange={(event) => setRegisterTelephone(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterTelephone(event.target.value)
+            }
           />
         </LabelWrapper>
         <LabelWrapper>
@@ -171,7 +179,9 @@ export default function Register() {
             {...register("password")}
             placeholder="Digite sua senha"
             value={userRegister.password}
-            onChange={(event) => setRegisterPassword(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterPassword(event.target.value)
+            }
           />
         </LabelWrapper>
         <LabelWrapper>
@@ -183,7 +193,9 @@ export default function Register() {
             {...register("passwordCheck")}
             placeholder="Confirme sua senha"
             value={userRegister.passwordCheck}
-            onChange={(event) => setRegisterPasswordCheck(event.target.value)}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setRegisterPasswordCheck(event.target.value)
+            }
           />
         </LabelWrapper>
         <PrimaryButton>Enviar</PrimaryButton>
