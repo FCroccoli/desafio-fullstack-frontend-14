@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { iContact } from "../interfaces/contact";
-import { iUser } from "../interfaces/user";
+import { iUser, iUserUpdate } from "../interfaces/user";
 
 export interface iModalContextProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export interface iModalContext {
   toggleEditModal: (contact?: iContact) => void;
   displayLoadingModal: boolean;
   toggleLoadingModal: () => void;
-  toggleUserModal: (user?: iUser) => void;
+  toggleUserModal: (user?: iUserUpdate) => void;
   selectedContact: iContact;
   alertLoading: boolean;
   sendAlertLoading: () => void;
@@ -23,7 +23,7 @@ export interface iModalContext {
   setContactEmail: (newEmail: string) => void;
   clearContact: () => void;
   displayUserEditModal: boolean;
-  userInfo: iUser;
+  userInfo: iUserUpdate;
   setInfoName: (newName: string) => void;
   setInfoLastName: (newLastName: string) => void;
   setInfoTelephone: (newTelephone: string) => void;
@@ -44,7 +44,7 @@ export default function ModalProvider({ children }: iModalContextProps) {
 
   const [selectedContact, setSelectedContact] = useState({} as iContact);
 
-  const [userInfo, setUserInfo] = useState({} as iUser);
+  const [userInfo, setUserInfo] = useState({} as iUserUpdate);
 
   const [alertLoading, setAlertLoading] = useState(true);
 
@@ -59,7 +59,7 @@ export default function ModalProvider({ children }: iModalContextProps) {
     }
   }
 
-  function toggleUserModal(user?: iUser) {
+  function toggleUserModal(user?: iUserUpdate) {
     setDisplayUserEditModal(!displayUserEditModal);
     if (user) {
       setUserInfo(user);
