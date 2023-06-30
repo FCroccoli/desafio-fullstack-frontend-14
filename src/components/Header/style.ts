@@ -4,7 +4,7 @@ interface iHeaderProps {
   solo: boolean;
 }
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.header<iHeaderProps>`
   height: 60px;
   width: 100%;
   padding: 20px 5%;
@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
   box-shadow: 0px 0px 5px var(--grey-4);
   display: flex;
   flex-direction: row;
-  justify-content: ${(props: iHeaderProps) => {
+  justify-content: ${(props) => {
     return props.solo ? "center" : "space-between";
   }};
   align-items: center;

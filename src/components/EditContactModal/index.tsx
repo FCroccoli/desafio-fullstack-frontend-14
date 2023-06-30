@@ -129,7 +129,7 @@ export default function EditContactModal() {
               id="first_name"
               {...register("first_name")}
               placeholder="Digite o nome"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setContactName(event.target.value);
               }}
               value={selectedContact.first_name}
@@ -143,7 +143,7 @@ export default function EditContactModal() {
               id="last_name"
               {...register("last_name")}
               placeholder="Digite o sobrenome"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setContactLastName(event.target.value);
               }}
               value={selectedContact.last_name}
@@ -157,7 +157,7 @@ export default function EditContactModal() {
               id="email"
               {...register("email")}
               placeholder="Digite o email"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setContactEmail(event.target.value);
               }}
               value={selectedContact.email}
@@ -171,7 +171,7 @@ export default function EditContactModal() {
               id="phone"
               {...register("phone")}
               placeholder="Digite o telefone"
-              onChange={(event) => {
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 setContactTelephone(event.target.value);
               }}
               value={selectedContact.phone}
@@ -179,7 +179,7 @@ export default function EditContactModal() {
           </LabelWrapper>
           <PrimaryButton>Editar Contato</PrimaryButton>
           <PrimaryButton
-            onClick={(event) => {
+            onClick={(event: any) => {
               event.preventDefault();
               deleteContact();
             }}
