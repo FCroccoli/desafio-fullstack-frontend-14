@@ -2,7 +2,6 @@ import axios from "axios";
 import {
   iLoginRes,
   iLoginUser,
-  iUser,
   iUserRegister,
   iUserRes,
   iUserUpdate,
